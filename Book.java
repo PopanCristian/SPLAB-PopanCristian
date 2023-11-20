@@ -3,10 +3,19 @@ package Lab1;
 import java.util.ArrayList;
 import java.util.List;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Book {
     private String title;
     private List<Author> authors = new ArrayList<>();
-    private List<Chapter> chapters = new ArrayList<>();
+    private List<Element> content = new ArrayList<>();
 
     public Book(String title) {
         this.title = title;
@@ -16,17 +25,39 @@ public class Book {
         authors.add(author);
     }
 
-    public int createChapter(String chapterName) {
-        Chapter newChapter = new Chapter(chapterName);
-        chapters.add(newChapter);
-        return chapters.size() - 1;
+    public void addContent(Element element) {
+        content.add(element);
     }
 
-    public Chapter getChapter(int index) {
-        if (index >= 0 && index < chapters.size()) {
-            return chapters.get(index);
+    public void print() {
+        System.out.println("Book: " + title);
+        System.out.println("Authors:");
+        for (Author author : authors) {
+            author.print();
         }
-        return null;
+        System.out.println("Content:");
+        for (Element element : content) {
+            element.print();
+        }
+    }
+
+    // Getters and setters
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public List<Author> getAuthors() {
+        return new ArrayList<>(authors);
+    }
+
+    public List<Element> getContent() {
+        return new ArrayList<>(content);
     }
 }
+
+
 
