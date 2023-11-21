@@ -3,12 +3,9 @@ package Lab1;
 import java.util.ArrayList;
 import java.util.List;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Section implements Element {
     private String title;
-    private List<Element> children = new ArrayList<>(); // List to hold child elements
+    private List<Element> elements = new ArrayList<>(); // List to hold child elements
 
     public Section(String title) {
         this.title = title;
@@ -17,30 +14,26 @@ public class Section implements Element {
     @Override
     public void print() {
         System.out.println("Section: " + title);
-        for (Element child : children) {
-            child.print();
+        for (Element element : elements) { // Changed 'children' to 'elements'
+            element.print();
         }
     }
 
-    @Override
-    public void add(Element element) {
-        children.add(element);
+    public void add(Element element) { // Removed @Override as this is not an interface method
+        elements.add(element);
     }
 
-    @Override
-    public void remove(Element element) {
-        children.remove(element);
+    public void remove(Element element) { // Removed @Override as this is not an interface method
+        elements.remove(element);
     }
 
-    @Override
-    public Element get(int index) {
-        if (index >= 0 && index < children.size()) {
-            return children.get(index);
+    public Element get(int index) { // Removed @Override as this is not an interface method
+        if (index >= 0 && index < elements.size()) {
+            return elements.get(index);
         }
         return null;
     }
 
-    // Getters and setters for title
     public String getTitle() {
         return title;
     }
@@ -49,8 +42,7 @@ public class Section implements Element {
         this.title = title;
     }
 
-    // Getter for children
-    public List<Element> getChildren() {
-        return new ArrayList<>(children);
+    public List<Element> getElements() { // Changed method name to 'getElements'
+        return new ArrayList<>(elements);
     }
 }

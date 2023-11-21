@@ -15,8 +15,7 @@ import java.util.List;
 public class Book {
     private String title;
     private List<Author> authors = new ArrayList<>();
-    private List<Element> content = new ArrayList<>();
-
+    private List<Section> sections = new ArrayList<>();
     public Book(String title) {
         this.title = title;
     }
@@ -25,19 +24,14 @@ public class Book {
         authors.add(author);
     }
 
-    public void addContent(Element element) {
-        content.add(element);
+    public void addContent(Section section) {
+        sections.add(section);
     }
 
     public void print() {
         System.out.println("Book: " + title);
-        System.out.println("Authors:");
-        for (Author author : authors) {
-            author.print();
-        }
-        System.out.println("Content:");
-        for (Element element : content) {
-            element.print();
+        for (Section section : sections) {
+            section.print();
         }
     }
 
@@ -54,10 +48,8 @@ public class Book {
         return new ArrayList<>(authors);
     }
 
-    public List<Element> getContent() {
-        return new ArrayList<>(content);
-    }
+    
 }
-
+	
 
 

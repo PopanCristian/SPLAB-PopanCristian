@@ -1,11 +1,23 @@
 package Lab1;
 
+import java.awt.Dimension;
+import java.util.concurrent.TimeUnit;
+
 public class Image implements Element {
     private String url;
+    private Dimension dim;
+    private Picture content;
 
-    public Image(String url) {
-        this.url = url;
-    }
+    public Image(String name) {
+    	this.url = url;
+    	this.dim = dim;
+        this.content = content;
+    	try {
+    	TimeUnit.SECONDS.sleep(5);
+    	} catch (InterruptedException e) {
+    	e.printStackTrace();
+    	}
+    	}
 
     @Override
     public void print() {
@@ -14,27 +26,29 @@ public class Image implements Element {
 
     @Override
     public void add(Element element) {
-        // Not applicable for Image
     }
 
     @Override
     public void remove(Element element) {
-        // Not applicable for Image
     }
 
     @Override
     public Element get(int index) {
-        // Not applicable for Image
         return null;
     }
 
-    // Getters and setters
-    public String getUrl() {
+    public String url() {
         return url;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
-    }
+    //@Override
+    //public Dimension dim() {
+    //    return dim;
+    //}
+
+   // @Override
+    //public Picture content() {
+    //    return content;
+    //}
 }
 
