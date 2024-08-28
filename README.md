@@ -1,1 +1,2 @@
 # SPLAB-PopanCristian
+This repository contains Java implementations of various design patterns and object-oriented principles, focusing on text alignment and document management. Key components include classes for text alignment strategies (AlignLeft, AlignCenter, AlignRight) and managing a book's structure (Book, Chapter, Paragraph). The project is designed to demonstrate the practical application of software engineering concepts.
